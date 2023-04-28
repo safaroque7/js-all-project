@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="main-header">
+      <h2><a href="index.html"> Javascript All projects </a></h2>
+    </div>
+    <div id="main-content">
+      <div class="menu-bar-all-project">
+        <ul>
+          <li class="single-menu-class">
+            <a href="index.html" target="_self"> 1. Stopwatch </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="2_watch.html" target="_self"> 2. Watch </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="3_countdown.html" target="_self"> 3. Countdown </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="4_accordion.html" target="_self"> 4. accordion </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="5_popup.html" target="_self"> 5. popup </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="6_calculator.html" target="_self"> 6. Calculator </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="7_to_do_list.html" target="_self"> 7. To-do List </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- what you want to do, you can do it from here start  -->
+
+      <div class="main-body-right-part">
+        <div id="stop-watch">
+          <div class="stop-watch" id="stop-watch-background">
+            <div class="stop-watch-title">
+              <h2>Watch in Javascript</h2>
+            </div>
+            <div class="watch-design">
+              <span id="hours"> 00 </span> : <span id="minutes"> 00 </span> :
+              <span id="seconds"> 00 </span>
+              <span id="am-pm"> </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        setInterval(function () {
+          let h = document.getElementById("hours");
+          let m = document.getElementById("minutes");
+          let s = document.getElementById("seconds");
+          let amPm = document.getElementById("am-pm");
+          let session = "AM";
+
+          let currentTime = new Date();
+
+          // hours
+          let cHour = currentTime.getHours();
+          if (cHour > 12) {
+            cHour = cHour - 12;
+            session = "PM";
+            if (cHour <= 9) {
+              cHour = "0" + cHour;
+            }
+            amPm.innerHTML = session;
+            h.innerHTML = cHour;
+          }
+
+          //minutes
+          let cMinutes = currentTime.getMinutes();
+          if (cMinutes <= 9) {
+            cMinutes = "0" + cMinutes;
+          } else {
+            cMinutes = cMinutes;
+          }
+          m.innerHTML = cMinutes;
+
+          // seconds
+          let cSeconds = currentTime.getSeconds();
+          if (cSeconds <= 9) {
+            cSeconds = "0" + cSeconds;
+          } else {
+            cSeconds = cSeconds;
+          }
+          s.innerHTML = cSeconds;
+        }, 1000);
+      </script>
+      <!-- what you want to do, you can do it end  -->
+    </div>
+    <div class="main-footer">
+      Developed by :
+      <a href="https://webnewsdesign.com" target="_blank">
+        webnewsdesign.com
+      </a>
+    </div>
+    <script src="js/custom.js"></script>
+  </body>
+</html>

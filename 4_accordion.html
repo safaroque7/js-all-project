@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    
+    <div class="main-header">
+      <h2><a href="index.html"> Javascript All projects </a></h2>
+    </div>
+    <div id="main-content">
+      <div class="menu-bar-all-project">
+        <ul>
+          <li class="single-menu-class">
+            <a href="index.html"> 1. Stopwatch </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="2_watch.html"> 2. Watch </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="3_countdown.html"> 3. Countdown </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="4_accordion.html"> 4. Accordion </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="5_popup.html"> 5. Popup </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="6_calculator.html"> 6. Calculator </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="7_to_do_list.html" target="_self"> 7. To-do List </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- what you want to do, you can do it from here start  -->
+      <div class="main-body-right-part">
+        <div id="accordion">
+          <!-- acd-header start -->
+          <div class="acd-header">
+            <div class="acd-title-sign">
+              <div class="acd-title">
+                How can change my main logo of my website?
+              </div>
+            </div>
+            <div class="acd-body">
+              You can change your website's main logo very easily. First of all
+              you will go to dashboard and click Appernace option. After that
+              you will get a few option to change your main logo. It is very
+              easy and convinent to change it.
+            </div>
+          </div>
+          <!-- acd-header end -->
+
+          <!-- acd-header start -->
+          <div class="acd-header">
+            <div class="acd-title-sign">
+              <div class="acd-title">This is my first project title</div>
+            </div>
+            <div class="acd-body">
+              This is my first project body text. This is my first project body
+              text. This is my first project body text. This is my first project
+              body text. This is my first project body text. This is my first
+              project body text. This is my first project body text. This is my
+              first project body text. This is my first project body text.
+            </div>
+          </div>
+          <!-- acd-header end -->
+
+          <!-- acd-header start -->
+          <div class="acd-header">
+            <div class="acd-title-sign">
+              <div class="acd-title">This is my first project title</div>
+            </div>
+            <div class="acd-body">
+              This is my first project body text. This is my first project body
+              text. This is my first project body text. This is my first project
+              body text. This is my first project body text. This is my first
+              project body text. This is my first project body text. This is my
+              first project body text. This is my first project body text.
+            </div>
+          </div>
+          <!-- acd-header end -->
+
+          <!-- acd-header start -->
+          <div class="acd-header">
+            <div class="acd-title-sign">
+              <div class="acd-title">This is my first project title</div>
+            </div>
+            <div class="acd-body">
+              This is my first project body text. This is my first project body
+              text. This is my first project body text. This is my first project
+              body text. This is my first project body text. This is my first
+              project body text. This is my first project body text. This is my
+              first project body text. This is my first project body text.
+            </div>
+          </div>
+          <!-- acd-header end -->
+
+          <!-- acd-header start -->
+          <div class="acd-header">
+            <div class="acd-title-sign">
+              <div class="acd-title">This is my first project title</div>
+            </div>
+            <div class="acd-body">
+              This is my first project body text. This is my first project body
+              text. This is my first project body text. This is my first project
+              body text. This is my first project body text. This is my first
+              project body text. This is my first project body text. This is my
+              first project body text. This is my first project body text.
+            </div>
+          </div>
+          <!-- acd-header end -->
+        </div>
+      </div>
+
+      <script>
+        const acdTitleSign = document.getElementsByClassName("acd-title-sign");
+        acdBody = document.getElementsByClassName("acd-body");
+
+        for (let i = 0; i < acdTitleSign.length; i++) {
+          acdTitleSign[i].addEventListener("click", () => {
+            for (let j = 0; j < acdTitleSign.length; j++) {
+              if (i == j) {
+                acdTitleSign[j].classList.toggle("acd-red-bg");
+                acdBody[j].classList.toggle("display-block");
+                acdTitleSign[j].classList.toggle("active");
+              } else {
+                acdTitleSign[j].classList.remove("acd-red-bg");
+                acdBody[j].classList.remove("display-block");
+              }
+            }
+          });
+        }
+      </script>
+      <!-- what you want to do, you can do it end  -->
+    </div>
+    <div class="main-footer">
+      Developed by :
+      <a href="https://webnewsdesign.com" target="_blank">
+        webnewsdesign.com
+      </a>
+    </div>
+    <script src="js/custom.js"> </script>
+  </body>
+</html>

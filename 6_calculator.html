@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title> Calculator </title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="main-header">
+      <h2><a href="index.html"> Javascript All projects </a></h2>
+    </div>
+    <div id="main-content">
+      <div class="menu-bar-all-project">
+        <ul>
+          <li class="single-menu-class">
+            <a href="index.html"> 1. Stopwatch </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="2_watch.html"> 2. Watch </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="3_countdown.html"> 3. Countdown </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="4_accordion.html"> 4. Accordion </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="5_popup.html"> 5. Popup </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="6_calculator.html"> 6. Calculator </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="7_to_do_list.html" target="_self"> 7. To-do List </a>
+          </li>
+        </ul>
+      </div>
+
+
+     <!--  *********************************************
+        what you want to do, you can do it from here start  
+      *********************************************-->
+
+      
+        <div id="calculator">
+          <div id="display_box">
+            <input type="text" id="showResult" readonly>
+          </div>
+          <div id="key_box">
+            <div class="per_key"> 7 </div>
+            <div class="per_key"> 8 </div>
+            <div class="per_key"> 9 </div>
+            <div class="per_key"> / </div>
+            <div class="per_key"> 4 </div>
+            <div class="per_key"> 5 </div>
+            <div class="per_key"> 6 </div>
+            <div class="per_key"> * </div>
+            <div class="per_key"> 1 </div>
+            <div class="per_key"> 2 </div>
+            <div class="per_key"> 3 </div>
+            <div class="per_key"> + </div>
+            <div class="per_key"> 0 </div>
+            <div class="per_key"> AC </div>
+            <div class="per_key"> = </div>
+            <div class="per_key"> - </div>
+            
+          </div>
+        </div>
+
+
+        <script>
+          const perKey = document.querySelectorAll('.per_key');
+          const showResult = document.getElementById('showResult');
+
+          for(let i=0; i<perKey.length; i++){
+            perKey[i].addEventListener('click', (e)=>{
+              text = e.target.innerText;
+              // showResult.value = text; 
+              // console.log(text);
+              if(text === 'AC'){
+                showResult.value = '';
+              }
+              else if(text === '='){
+                let outPut = eval(showResult.value);
+                showResult.value = outPut;
+
+              }
+              else{
+                // showResult.value = showResult.value + text;
+                showResult.value += text;
+              }
+
+            });
+          }
+        </script>
+      
+
+      <!-- *********************************************
+        what you want to do, you can do it end  
+      *********************************************-->
+
+    </div>
+
+
+    </div>
+    <div class="main-footer">
+      Developed by :
+      <a href="https://webnewsdesign.com" target="_blank">
+        webnewsdesign.com
+      </a>
+    </div>
+
+<div class="button">1</div>
+<div class="button">2</div>
+<div class="button">3</div>
+<div class="button">4</div>
+<div class="button">5</div>
+<div class="button">6</div>
+<div class="button">7</div>
+<div class="button">8</div>
+<div class="button">9</div>
+<div class="button">0</div>
+<div class="button">AC</div>
+<div class="button"></div>
+
+<style>
+  .button {
+    background: red;
+    color: white;
+    padding: 5px;
+    display: inline;
+    margin-right: 5px;
+    cursor: pointer;
+  }
+</style>
+
+<!-- <div id="resssult">Result will be shown here</div> -->
+<input type="text" id="resssult" placeholder="Result will be shown here" readonly />
+
+<script>
+  const buttons = document.querySelectorAll(".button");
+  resssult = document.getElementById("resssult");
+
+  for (let i = 0; i < buttons.length; i++) {
+    buttons[i].addEventListener("click", (e) => {
+      text = e.target.innerText;
+      console.log(text);
+
+      resssult.value += text;
+    });
+  }
+</script>
+<script src="js/custom.js"> </script>
+  </body>
+</html>

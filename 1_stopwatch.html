@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Stop Watch</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="main-header">
+    <h2><a href="index.html"> Javascript All projects </a></h2>
+  </div>
+  <div id="main-content">
+
+    <div class="menu-bar-all-project">
+      <ul>
+        <li class="single-menu-class">
+          <a href="index.html"> 1. Stopwatch </a>
+        </li>
+        <li class="single-menu-class">
+          <a href="2_watch.html"> 2. Watch </a>
+        </li>
+        <li class="single-menu-class">
+          <a href="3_countdown.html"> 3. Countdown </a>
+        </li>
+        <li class="single-menu-class">
+          <a href="4_accordion.html"> 4. Accordion </a>
+        </li>
+        <li class="single-menu-class">
+          <a href="5_popup.html"> 5. Popup </a>
+        </li>
+        <li class="single-menu-class">
+          <a href="6_calculator.html"> 6. Calculator </a>
+        </li>
+        <li class="single-menu-class">
+          <a href="7_to_do_list.html" target="_self"> 7. To-do List </a>
+        </li>
+      </ul>
+    </div>
+
+    <div id="stop-watch">
+  <div class="stop-watch" id="stop-watch-background">
+    <div class="stop-watch-title">
+      <h2>Stopwatch in Javascript</h2>
+    </div>
+    <div class="show-time">
+      <span id="sw-minutes">OO</span> : <span id="sw-seconds">OO</span> :
+      <span id="sw-mili-seconds">OO</span>
+    </div>
+    <div class="sw-buttons">
+      <input type="button" value="Start" id="sw-start-button" />
+      <input type="button" value="Stop" id="sw-stop-button" />
+      <input type="button" value="Reset" id="sw-reset-button" />
+    </div>
+  </div>
+</div>
+
+
+<script>
+  let swStartButton = document.getElementById("sw-start-button");
+  let swStopButton = document.getElementById("sw-stop-button");
+  let swResetButton = document.getElementById("sw-reset-button");
+
+  let swOutputMiliseconds = document.getElementById("sw-mili-seconds");
+  let swOutputSeconds = document.getElementById("sw-seconds");
+  let swOutputMinutes = document.getElementById("sw-minutes");
+
+  let swMiliSeconds = 0;
+  let swSeconds = 0;
+  let swMinutes = 0;
+
+  let interval;
+
+  // start
+  swStartButton.addEventListener('click', () => {
+    clearInterval(interval);
+    interval = setInterval(setTimer, 10);
+  });
+
+  // stop
+  swStopButton.addEventListener("click", () => {
+    clearInterval(interval);
+  });
+
+  // reset
+  swResetButton.addEventListener("click", () => {
+    clearInterval(interval);
+    swMiliSeconds = "00";
+    swSeconds = "00";
+    swMinutes = "00";
+    swOutputMiliseconds.innerHTML = swMiliSeconds;
+    swOutputSeconds.innerHTML = swSeconds;
+    swOutputMinutes.innerHTML = swMinutes;
+  });
+
+  function setTimer() {
+    swMiliSeconds++;
+    if (swMiliSeconds <= 9) {
+      swOutputMiliseconds.innerHTML = "0" + swMiliSeconds;
+    }
+    if (swMiliSeconds > 9) {
+      swOutputMiliseconds.innerHTML = swMiliSeconds;
+    }
+
+    if (swMiliSeconds > 99) {
+      swSeconds++;
+      swOutputSeconds.innerHTML = swSeconds;
+
+      swMiliSeconds = 0;
+      swOutputMiliseconds.innerHTML = "0" + 0;
+    }
+
+    if (swSeconds <= 9) {
+      swOutputSeconds.innerHTML = "0" + swSeconds;
+    }
+
+    if (swSeconds > 59) {
+      swMinutes++;
+      swOutputMinutes.innerHTML = swMinutes;
+
+      swSeconds = 0;
+      swOutputSeconds.innerHTML = "0" + 0;
+    }
+
+    if (swMinutes <= 9) {
+      swOutputMinutes.innerHTML = "0" + swMinutes;
+    }
+  }
+
+  setInterval(function() {
+    let swColor = ["red", "green", "blue", "magenta"];
+    ColorId = Math.floor(Math.random() * swColor.length);
+    stopWatch = document.querySelector("#stop-watch-background");
+    stopWatch.style.background = swColor[ColorId];
+  }, 1000);
+
+  //main website js
+  const mwMenuItem = document.querySelectorAll(".single-menu-class");
+  for (let i = 0; i < mwMenuItem.length; i++) {
+    mwMenuItem[i].addEventListener("click", () => {
+      for (let j = 0; j < mwMenuItem.length; j++) {
+        if (i == j) {
+          mwMenuItem[j].classList.toggle("mw-menu-active");
+        } else {
+          mwMenuItem[j].classList.remove("mw-menu-active");
+        }
+      }
+    });
+  }
+</script>
+
+</div>
+  <div class="main-footer">
+    Developed by : <a href="https://webnewsdesign.com" target="_blank"> webnewsdesign.com </a>
+  </div>
+  <script src="js/custom.js"> </script>
+</body>
+</html>

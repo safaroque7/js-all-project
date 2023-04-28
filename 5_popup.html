@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="main-header">
+      <h2><a href="index.html"> Javascript All projects </a></h2>
+    </div>
+    <div id="main-content">
+      <div class="menu-bar-all-project">
+        <ul>
+          <li class="single-menu-class">
+            <a href="index.html"> 1. Stopwatch </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="2_watch.html"> 2. Watch </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="3_countdown.html"> 3. Countdown </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="4_accordion.html"> 4. Accordion </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="5_popup.html"> 5. Popup </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="6_calculator.html"> 6. Calculator </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="7_to_do_list.html" target="_self"> 7. To-do List </a>
+          </li>
+        </ul>
+      </div>
+
+      <!--  *********************************************
+        what you want to do, you can do it from here start  
+      *********************************************-->
+
+      <div id="pop-up-main-box">
+        <div class="pop-up">
+          <img src="images/ad.jpeg" alt="" />
+          <div id="remainTime"><span id="remain-sec"> </span>/05</div>
+          <div id="cancel-id">x</div>
+        </div>
+      </div>
+
+      <!-- *********************************************
+        what you want to do, you can do it end  
+      *********************************************-->
+    </div>
+    <div class="main-footer">
+      Developed by :
+      <a href="https://webnewsdesign.com" target="_blank">
+        webnewsdesign.com
+      </a>
+    </div>
+
+    <script>
+      let popUpMainBox = document.getElementById("pop-up-main-box");
+      let cancelId = document.getElementById("cancel-id");
+      cancelId.addEventListener("click", () => {
+        popUpMainBox.style.opacity = '0';
+        popUpMainBox.style.transition = "all 0.5s";
+      });
+
+      
+      setTimeout(popUpShow, 2000);
+      function popUpShow(){
+        popUpMainBox.style.opacity = '100%';
+        popUpMainBox.style.transition = 'all 0.5s';
+        // alert('hi');
+      }
+
+      setTimeout(popUpHide, 10000);
+      function popUpHide(){
+        popUpMainBox.style.opacity = '0';
+        popUpMainBox.style.transition = 'all 0.5s';
+      remainSec.innerHTML = restSecs;
+      }
+   
+     
+
+          // for(let sn = 5; sn > 0; sn--){
+          //   let remainSec = document.getElementById('remain-sec');
+          //   remainSec.innerHTML = sn;
+
+          // }
+
+    </script>
+    <script src="js/custom.js"> </script>
+  </body>
+</html>

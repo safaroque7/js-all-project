@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Stop Watch</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="main-header">
+      <h2><a href="index.html"> Javascript All projects </a></h2>
+    </div>
+    <div id="main-content">
+      <div class="menu-bar-all-project">
+        <ul>
+          <li class="single-menu-class">
+            <a href="index.html"> 1. Stopwatch </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="2_watch.html"> 2. Watch </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="3_countdown.html"> 3. Countdown </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="4_accordion.html"> 4. Accordion </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="5_popup.html"> 5. Popup </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="6_calculator.html"> 6. Calculator </a>
+          </li>
+          <li class="single-menu-class">
+            <a href="7_to_do_list.html" target="_self"> 7. To-do List </a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- what you want to do, you can do it from here start  -->
+      <div class="main-body-right-part">
+        <div id="stop-watch">
+          <div class="stop-watch" id="stop-watch-background">
+            <div class="stop-watch-title">
+              <h2>Countdown in Javascript</h2>
+              <h1>অনুষ্ঠান শুরুর বাকি আছে</h1>
+            </div>
+            <div class="countdown">
+              <span id="cd-month"> 00 </span>
+              <span class="cd-small-text"> মাস </span>
+              <span id="cd-day"> 00 </span>
+              <span class="cd-small-text"> দিন </span>
+              <span id="cd-hours"> 00 </span>
+              <span class="cd-small-text"> ঘণ্টা </span>
+              <span id="cd-minutes"> 00 </span>
+              <span class="cd-small-text"> মিনিট </span>
+              <span id="cd-seconds"> 00 </span>
+              <span class="cd-small-text"> সেকেন্ড </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <script>
+        setInterval(() => {
+          let cdShowSeconds = document.getElementById("cd-seconds");
+          let cdShowMinutes = document.getElementById("cd-minutes");
+          let cdShowHours = document.getElementById("cd-hours");
+          let cdShowDays = document.getElementById("cd-day");
+          let cdShowMonth = document.getElementById("cd-month");
+
+          let cdExpectTime = new Date("2024-05-29 17:05:00");
+          let cdCurrentTime = new Date();
+          let cdRestTime = cdExpectTime - cdCurrentTime;
+
+          let cdSeconds = cdRestTime / 1000;
+          let cdMinutes = cdSeconds / 60;
+          let cdHours = cdMinutes / 60;
+
+          let cdDays = cdHours / 24;
+          let cdMonth = cdDays / 30;
+
+          cdSeconds = Math.floor(cdSeconds % 60);
+          cdMinutes = Math.floor(cdMinutes % 60);
+          cdHours = Math.floor(cdHours % 24);
+          cdDays = Math.floor(cdDays % 30);
+          cdMonth = Math.floor(cdMonth % 12);
+
+          // show seconds
+          if (cdSeconds <= 9) {
+            cdSeconds = "0" + cdSeconds;
+          } else {
+            cdSeconds = cdSeconds;
+          }
+          cdShowSeconds.innerHTML = cdSeconds;
+
+          // show minutes
+          if (cdMinutes <= 9) {
+            cdMinutes = "0" + cdMinutes;
+          } else {
+            cdMinutes = cdMinutes;
+          }
+          cdShowMinutes.innerHTML = cdMinutes;
+
+          // show hours
+          if (cdHours <= 9) {
+            cdHours = "0" + cdHours;
+          } else {
+            cdHours = cdHours;
+          }
+          cdShowHours.innerHTML = cdHours;
+
+          // show days
+          if (cdDays <= 9) {
+            cdDays = "0" + cdDays;
+          } else {
+            cdDays = cdDays;
+          }
+          cdShowDays.innerHTML = cdDays;
+
+          // show months
+          if (cdMonth <= 9) {
+            cdMonth = "0" + cdMonth;
+          } else {
+            cdMonth = cdMonth;
+          }
+          cdShowMonth.innerHTML = cdMonth;
+        }, 1000);
+        // console.log(cdRestTime);
+      </script>
+      <!-- what you want to do, you can do it end  -->
+    </div>
+    <div class="main-footer">
+      Developed by :
+      <a href="https://webnewsdesign.com" target="_blank">
+        webnewsdesign.com
+      </a>
+    </div>
+    <script src="js/custom.js"> </script>
+  </body>
+</html>
