@@ -10,7 +10,7 @@
   <style>
     div#to-do-list {
       height: auto;
-      width: 85%;
+      width: 90%;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -182,20 +182,23 @@
     const listContainer = document.getElementById('list-container');
     const addTask = document.getElementById('addTask');
 
-    addTask.addEventListener('click', () => {
-      if (inputBox.value === '') {
-        alert('You must write something');
-      } else {
-        let li = document.createElement('li');
-        li.innerHTML = inputBox.value;
-        listContainer.appendChild(li);
+    inputBox.addEventListener('keypress', (e) => {
+      if (e.key === 'Enter') {
+        if (inputBox.value === '') {
+          alert('You must write something');
+        } else {
+          let li = document.createElement('li');
+          li.innerHTML = inputBox.value;
+          listContainer.appendChild(li);
 
-        let span = document.createElement('span');
-        span.innerHTML = '\u00d7';
-        li.appendChild(span);
+          let span = document.createElement('span');
+          span.innerHTML = '\u00d7';
+          li.appendChild(span);
+        }
+        inputBox.value = '';
+        saveData();
       }
-      inputBox.value = '';
-      saveData();
+
     });
 
     listContainer.addEventListener('click', function (e) {
