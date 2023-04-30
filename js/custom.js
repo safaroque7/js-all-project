@@ -1,16 +1,16 @@
-const mwMenuItem = document.querySelectorAll(".single-menu-class");
-for (let i = 0; i < mwMenuItem.length; i++) {
-  mwMenuItem[i].addEventListener("click", (e) => {
-    for (let j = 0; j < mwMenuItem.length; j++) {
-      if (i == j) {
-        mwMenuItem[j].classList.toggle("mw-menu-active");
-      } else {
-        mwMenuItem[j].classList.remove("mw-menu-active");
-      }
-    }
-    e.preventDefault();
-  });
-}
+// const mwMenuItem = document.querySelectorAll(".single-menu-class");
+// for (let i = 0; i < mwMenuItem.length; i++) {
+//   mwMenuItem[i].addEventListener("click", (e) => {
+//     for (let j = 0; j < mwMenuItem.length; j++) {
+//       if (i == j) {
+//         mwMenuItem[j].classList.toggle("mw-menu-active");
+//       } else {
+//         mwMenuItem[j].classList.remove("mw-menu-active");
+//       }
+//     }
+//     e.preventDefault();
+//   });
+// }
 
 // let menuBarAllProject = document.querySelector('.menu-bar-all-project');
 // menuBarAllProject.addEventListener('click', function(e){
