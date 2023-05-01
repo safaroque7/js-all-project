@@ -23,7 +23,7 @@
 
     .x-ray-right {
       width: 75%;
-      background: red;
+      /* background: red; */
     }
   </style>
 </head>
@@ -71,12 +71,52 @@
       <div class="x-ray-left">
         <h2> Type here to X-ray </h2>
         <div id="inputAndButton">
-          <input type="text" id="xrayInput" autofocus>
-          <button id="inputButton"> Submit </button>
+          <input type="text" id="xray-input" autofocus>
+          <button id="input-button"> Submit </button>
         </div>
       </div>
-      <div class="x-ray-right"></div>
+      <div class="x-ray-right">
+        <ul id="right-part">
+
+        </ul>
+      </div>
     </div>
+
+    <script>
+      const xrayInput = document.getElementById('xray-input');
+      const inputButton = document.getElementById('input-button');
+      const rightPart = document.getElementById('right-part');
+
+      inputButton.addEventListener('click', () => {
+
+        if (xrayInput.value === '') {
+          alert('You must type something');
+          showData();
+        } else {
+          let li = document.createElement('li');
+          let inputValue = xrayInput.value;
+          // rightPart.innerHTML = inputValue;
+          li.innerHTML = inputValue;
+          rightPart.appendChild(li);
+          showData();
+        }
+      });
+
+      xrayInput.value = '';
+
+      function saveData() {
+        localStorage.setItem('data', rightPart.innerHTML);
+      }
+
+      function showData() {
+        rightPart.innerHTML = localStorage.getItem('data');
+      }
+
+      showData();
+
+
+
+    </script>
 
 
     <!-- *********************************************
@@ -93,7 +133,7 @@
     name.slice(2, 4);	//us
     name.slice(-2);	//sh
     name.substr(2, 1);	//u
-    name.replace('yush',  'jay');	//Ajay
+    name.replace('yush', 'jay');	//Ajay
     name.toUpperCase();	//AYUSH
     name.toLowerCase();	//ayush
     name.concat(' ', 'Khan');	// Ayush Khan
@@ -104,9 +144,9 @@
     name.charCodeAt(3);	//115
     name[3];	//s
     name.split('');	//[ 'A', 'y', 'u', 's', 'h' ]
-    name.indexOf( 'u');	// 2
-    'AyushA'.lastIndexOf( 'A');	// 5
-    name.search( 's');	// 3
+    name.indexOf('u');	// 2
+    'AyushA'.lastIndexOf('A');	// 5
+    name.search('s');	// 3
     name.includes('s');	// true
     name.startsWith('s');	// false
     name.endsWith('h');	//true
