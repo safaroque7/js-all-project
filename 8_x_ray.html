@@ -87,7 +87,9 @@
       const inputButton = document.getElementById('input-button');
       const rightPart = document.getElementById('right-part');
 
-      inputButton.addEventListener('keypress', (e) => {
+      
+
+      xrayInput.addEventListener('keypress', (e)=> {
         if (e.key === 'Enter') {
           
 
@@ -102,7 +104,7 @@
               rightPart.appendChild(li);
               let patt = li.appendChild(p);
               // patt.innerHTML = 'length';
-              patt.innerHTML = 'Length = ' + inputValue.length + ' <br> Lowercase = ' + inputValue.toLowerCase() + ' <br> Uppercase = ' + inputValue.toUpperCase();
+              patt.innerHTML = 'Length = ' + inputValue.length + ' <br> Lowercase = ' + inputValue.toLowerCase() + ' <br> Uppercase = ' + inputValue.toUpperCase() + '<br> Type = ' + typeof inputValue + '<br> Array = ' + inputValue.split('');
 
 
               saveData();
