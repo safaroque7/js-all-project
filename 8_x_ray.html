@@ -87,31 +87,50 @@
       const inputButton = document.getElementById('input-button');
       const rightPart = document.getElementById('right-part');
 
-      inputButton.addEventListener('click', () => {
+      inputButton.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter') {
+          
 
-        if (xrayInput.value === '') {
-          alert('You must type something');
-          showData();
-        } else {
-          let li = document.createElement('li');
-          let inputValue = xrayInput.value;
-          // rightPart.innerHTML = inputValue;
-          li.innerHTML = inputValue;
-          rightPart.appendChild(li);
-          showData();
+            if (xrayInput.value === '') {
+              alert('You must type something');
+              saveData();
+            } else {
+              let li = document.createElement('li');
+              let p = document.createElement('p');
+              let inputValue = xrayInput.value;
+              li.innerHTML = inputValue;
+              rightPart.appendChild(li);
+              let patt = li.appendChild(p);
+              // patt.innerHTML = 'length';
+              patt.innerHTML = 'Length = ' + inputValue.length + ' <br> Lowercase = ' + inputValue.toLowerCase() + ' <br> Uppercase = ' + inputValue.toUpperCase();
+
+
+              saveData();
+            }
+            xrayInput.value = '';
+            saveData();
+          
+
+        
         }
       });
 
-      xrayInput.value = '';
+
+
+      //for length
+      function lengthfunction() {
+        const inputValue = xrayInput.value;
+        let stringLength = inputValue.length;
+        console.log(stringLength);
+      }
+
 
       function saveData() {
         localStorage.setItem('data', rightPart.innerHTML);
       }
-
       function showData() {
         rightPart.innerHTML = localStorage.getItem('data');
       }
-
       showData();
 
 
