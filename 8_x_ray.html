@@ -16,14 +16,52 @@
     }
 
     .x-ray-left {
-      width: 20%;
+      width: 25%;
       border-right: 1px solid #999;
       margin-right: 5%;
+      padding: 2%;
     }
 
     .x-ray-right {
-      width: 75%;
+      width: 70%;
       /* background: red; */
+    }
+
+    ul#right-part {
+      display: flex;
+      list-style: none;
+      flex-wrap: wrap;
+    }
+
+    ul#right-part li {
+      width: 30%;
+      border: 1px solid #999;
+      border-radius: 10px;
+      margin-right: 3.33%;
+      padding: 12px;
+      margin-bottom: 3.33%;
+    }
+
+    div#inputAndButton {
+      display: flex;
+      flex-wrap: wrap;
+    }
+
+    input#xray-input {
+      flex: 1;
+      padding: 5px;
+      outline: none;
+      margin-right: 4%;
+    }
+
+    .x-ray-left h2 {
+      text-align: center;
+      padding-bottom: 15px;
+    }
+
+    button#input-button {
+      font-size: 15px;
+      padding: 5px 10px;
     }
   </style>
 </head>
@@ -87,33 +125,33 @@
       const inputButton = document.getElementById('input-button');
       const rightPart = document.getElementById('right-part');
 
-      
 
-      xrayInput.addEventListener('keypress', (e)=> {
+
+      xrayInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-          
-
-            if (xrayInput.value === '') {
-              alert('You must type something');
-              saveData();
-            } else {
-              let li = document.createElement('li');
-              let p = document.createElement('p');
-              let inputValue = xrayInput.value;
-              li.innerHTML = inputValue;
-              rightPart.appendChild(li);
-              let patt = li.appendChild(p);
-              // patt.innerHTML = 'length';
-              patt.innerHTML = 'Length = ' + inputValue.length + ' <br> Lowercase = ' + inputValue.toLowerCase() + ' <br> Uppercase = ' + inputValue.toUpperCase() + '<br> Type = ' + typeof inputValue + '<br> Array = ' + inputValue.split('');
 
 
-              saveData();
-            }
-            xrayInput.value = '';
+          if (xrayInput.value === '') {
+            alert('You must type something');
             saveData();
-          
+          } else {
+            let li = document.createElement('li');
+            let p = document.createElement('p');
+            let inputValue = xrayInput.value;
+            li.innerHTML = inputValue;
+            rightPart.appendChild(li);
+            let patt = li.appendChild(p);
+            // patt.innerHTML = 'length';
+            patt.innerHTML = 'Length = ' + inputValue.length + ' <br> Lowercase = ' + inputValue.toLowerCase() + ' <br> Uppercase = ' + inputValue.toUpperCase() + '<br> Type = ' + typeof inputValue + '<br> Array = ' + inputValue.split('') + '<br> Substring = ' + inputValue.substr(2, 1) + '<br> Replace by Chowdhury' + inputValue.replace('khan', 'chowdhury');
 
-        
+
+            saveData();
+          }
+          xrayInput.value = '';
+          saveData();
+
+
+
         }
       });
 
