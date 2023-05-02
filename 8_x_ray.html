@@ -72,6 +72,15 @@
     ul#right-part li p {
       font-weight: normal;
     }
+
+    div#name-value li {
+      list-style: none;
+      padding: 5px 10px;
+      background: #999;
+      display: inline-block;
+      margin: 6px;
+      color: #fff;
+    }
   </style>
 </head>
 
@@ -121,13 +130,26 @@
           <input type="text" id="xray-input" autofocus>
           <button id="input-button"> Submit </button>
         </div>
+
+        <div id="name-value"></div>
+
+
       </div>
+
+
+
+
       <div class="x-ray-right">
         <ul id="right-part">
 
         </ul>
       </div>
     </div>
+
+
+
+
+
 
     <script>
       const xrayInput = document.getElementById('xray-input');
@@ -180,6 +202,30 @@
         rightPart.innerHTML = localStorage.getItem('data');
       }
       showData();
+
+
+
+    </script>
+
+
+
+    <script>
+      const nameValue = document.getElementById('name-value');
+
+      let fullName = 'Uganda Minister Shot Dead at Home by Bodyguard, Shooter then Turns Gun on Himself';
+      let nameArray = fullName.split(' ');
+
+      // console.log(nameArray.length);
+
+      for (let i = 0; i < nameArray.length; i++) {
+        let value = nameArray[i];
+        if (value !== 0) {
+          let li = document.createElement('li');
+          li.innerHTML = i + 1 + ' ' + value;
+          nameValue.appendChild(li);
+        }
+
+      }
 
 
 
