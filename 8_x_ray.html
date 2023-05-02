@@ -16,14 +16,14 @@
     }
 
     .x-ray-left {
-      width: 25%;
+      width: 31%;
       border-right: 1px solid #999;
       margin-right: 5%;
-      padding: 2%;
+      padding: 5%;
     }
 
     .x-ray-right {
-      width: 70%;
+      width: 64%;
       /* background: red; */
     }
 
@@ -62,6 +62,15 @@
     button#input-button {
       font-size: 15px;
       padding: 5px 10px;
+      cursor: pointer;
+    }
+
+    ul#right-part li:first-child {
+      font-weight: bold;
+    }
+
+    ul#right-part li p {
+      font-weight: normal;
     }
   </style>
 </head>
@@ -125,11 +134,10 @@
       const inputButton = document.getElementById('input-button');
       const rightPart = document.getElementById('right-part');
 
-
+      console.log(typeof (xrayInput.value));
 
       xrayInput.addEventListener('keypress', (e) => {
         if (e.key === 'Enter') {
-
 
           if (xrayInput.value === '') {
             alert('You must type something');
@@ -140,9 +148,9 @@
             let inputValue = xrayInput.value;
             li.innerHTML = inputValue;
             rightPart.appendChild(li);
-            let patt = li.appendChild(p);
-            // patt.innerHTML = 'length';
-            patt.innerHTML = 'Length = ' + inputValue.length + ' <br> Lowercase = ' + inputValue.toLowerCase() + ' <br> Uppercase = ' + inputValue.toUpperCase() + '<br> Type = ' + typeof inputValue + '<br> Array = ' + inputValue.split('') + '<br> Substring = ' + inputValue.substr(2, 1) + '<br> Replace by Chowdhury' + inputValue.replace('khan', 'chowdhury');
+
+            p = li.appendChild(p);
+            p.innerHTML = 'Length = ' + inputValue.length + ' <br> Lowercase = ' + inputValue.toLowerCase() + ' <br> Uppercase = ' + inputValue.toUpperCase() + '<br> Type = ' + typeof inputValue + '<br> Array = ' + inputValue.split('') + '<br> Substring = ' + inputValue.substr(2, 2);
 
 
             saveData();
