@@ -126,114 +126,11 @@
         what you want to do, you can do it from here start  
       *********************************************-->
 
-    <div id="x-ray-box">
-      <div class="x-ray-left">
-        <h2> Type here to X-ray </h2>
-        <div id="inputAndButton">
-          <input type="text" id="xray-input" autofocus>
-          <button id="input-button"> Submit </button>
-        </div>
-
-        <div id="name-value"></div>
-
-
-      </div>
-
-
-
-
-      <div class="x-ray-right">
-        <ul id="right-part">
-
-        </ul>
+    <div id="array-main">
+      <div class="per-array">
+        <div id="first-array"></div>
       </div>
     </div>
-
-
-
-
-
-
-    <script>
-      const xrayInput = document.getElementById('xray-input');
-      const inputButton = document.getElementById('input-button');
-      const rightPart = document.getElementById('right-part');
-
-      console.log(typeof (xrayInput.value));
-
-      xrayInput.addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') {
-
-          if (xrayInput.value === '') {
-            alert('You must type something');
-            saveData();
-          } else {
-            let li = document.createElement('li');
-            let p = document.createElement('p');
-            let inputValue = xrayInput.value;
-            li.innerHTML = inputValue;
-            rightPart.appendChild(li);
-
-            p = li.appendChild(p);
-            p.innerHTML = 'Length = ' + inputValue.length + ' <br> Lowercase = ' + inputValue.toLowerCase() + ' <br> Uppercase = ' + inputValue.toUpperCase() + '<br> Type = ' + typeof inputValue + '<br> Array = ' + inputValue.split('') + '<br> Substring = ' + inputValue.substr(2, 2);
-
-
-            saveData();
-          }
-          xrayInput.value = '';
-          saveData();
-
-
-
-        }
-      });
-
-
-
-      //for length
-      function lengthfunction() {
-        const inputValue = xrayInput.value;
-        let stringLength = inputValue.length;
-        console.log(stringLength);
-      }
-
-
-      function saveData() {
-        localStorage.setItem('data', rightPart.innerHTML);
-      }
-      function showData() {
-        rightPart.innerHTML = localStorage.getItem('data');
-      }
-      showData();
-
-
-
-    </script>
-
-
-
-    <script>
-      const nameValue = document.getElementById('name-value');
-
-      let fullName = 'Uganda Minister Shot Dead at Home by Bodyguard, Shooter then Turns Gun on Himself';
-      let nameArray = fullName.split(' ');
-
-      // console.log(nameArray.length);
-
-      for (let i = 0; i < nameArray.length; i++) {
-        let value = nameArray[i];
-        if (value !== 0) {
-          let li = document.createElement('li');
-          li.innerHTML = i + 1 + ' ' + value;
-          nameValue.appendChild(li);
-        }
-
-      }
-
-
-
-    </script>
-
 
     <!-- *********************************************
         what you want to do, you can do it end  
@@ -243,29 +140,22 @@
 
   <!-- javascript part start -->
   <script>
-    const name = 'Ayush';
-    name.length; //5
-    name.slice(2, 4);	//us
-    name.slice(2, 4);	//us
-    name.slice(-2);	//sh
-    name.substr(2, 1);	//u
-    name.replace('yush', 'jay');	//Ajay
-    name.toUpperCase();	//AYUSH
-    name.toLowerCase();	//ayush
-    name.concat(' ', 'Khan');	// Ayush Khan
-    '   Ayush'.trim();	//Ayush
-    name.padStart(7, 'A');	//AAAyush
-    name.padEnd(7, 'A');	//AyushAA
-    name.charAt(3);	//s
-    name.charCodeAt(3);	//115
-    name[3];	//s
-    name.split('');	//[ 'A', 'y', 'u', 's', 'h' ]
-    name.indexOf('u');	// 2
-    'AyushA'.lastIndexOf('A');	// 5
-    name.search('s');	// 3
-    name.includes('s');	// true
-    name.startsWith('s');	// false
-    name.endsWith('h');	//true
+    const firstArray = document.getElementById('first-array');
+    const division = ['Dhaka', 'Chittagong', 'Khulna', 'Rajshahi', 'Sylhet', 'Mymansingh', 'Barishal', 'Rangpur'];
+    division.push('Faroque', 'Brahmanbaria');
+    const singleDivision = division.slice(',');
+    // console.log(singleDivision);
+
+    for (let i = 0; i < division.length; i++) {
+      let li = document.createElement('li');
+      li.innerHTML = singleDivision[i];
+      let singleData = firstArray.appendChild(li);
+      console.log(singleData);
+    }
+
+
+
+
 
   </script>
   <!-- javascript part end -->
