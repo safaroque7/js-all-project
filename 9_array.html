@@ -142,15 +142,18 @@
   <script>
     const firstArray = document.getElementById('first-array');
     const division = ['Dhaka', 'Chittagong', 'Khulna', 'Rajshahi', 'Sylhet', 'Mymansingh', 'Barishal', 'Rangpur'];
-    division.push('Faroque', 'Brahmanbaria');
+    division.push('Faroque', 'Brahmanbaria', 'Mouchak', '', '');
     const singleDivision = division.slice(',');
     // console.log(singleDivision);
 
     for (let i = 0; i < division.length; i++) {
       let li = document.createElement('li');
-      li.innerHTML = singleDivision[i];
-      let singleData = firstArray.appendChild(li);
-      console.log(singleData);
+      if (singleDivision[i] !== '') {
+        li.innerHTML = singleDivision[i];
+        let singleData = firstArray.appendChild(li);
+        console.log(singleData);
+      }
+
     }
 
 
