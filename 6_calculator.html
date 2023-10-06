@@ -119,46 +119,7 @@
       </a>
     </div>
 
-<div class="button">1</div>
-<div class="button">2</div>
-<div class="button">3</div>
-<div class="button">4</div>
-<div class="button">5</div>
-<div class="button">6</div>
-<div class="button">7</div>
-<div class="button">8</div>
-<div class="button">9</div>
-<div class="button">0</div>
-<div class="button">AC</div>
-<div class="button"></div>
 
-<style>
-  .button {
-    background: red;
-    color: white;
-    padding: 5px;
-    display: inline;
-    margin-right: 5px;
-    cursor: pointer;
-  }
-</style>
-
-<!-- <div id="resssult">Result will be shown here</div> -->
-<input type="text" id="resssult" placeholder="Result will be shown here" readonly />
-
-<script>
-  const buttons = document.querySelectorAll(".button");
-  resssult = document.getElementById("resssult");
-
-  for (let i = 0; i < buttons.length; i++) {
-    buttons[i].addEventListener("click", (e) => {
-      text = e.target.innerText;
-      console.log(text);
-
-      resssult.value += text;
-    });
-  }
-</script>
 <script src="js/custom.js"> </script>
   </body>
 </html>
