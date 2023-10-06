@@ -159,12 +159,12 @@
         );
       }
 
-        // // about e.target
-        // let ssss = document.getElementsByClassName("trust");
-        // ssss.addEventListener("click", (e) => {
-        //   let ttt = e.target;
-        //   console.log(ttt);
-        // });
+      // // about e.target
+      // let ssss = document.getElementsByClassName("trust");
+      // ssss.addEventListener("click", (e) => {
+      //   let ttt = e.target;
+      //   console.log(ttt);
+      // });
     </script>
   </div>
 
@@ -174,101 +174,6 @@
       webnewsdesign.com
     </a>
   </div>
-
-
-  <input type="text" id="text-input" autofocus>
-  <button id="add-button">Add</button>
-
-  <ul id="task-id">
-
-  </ul>
-
-  <script>
-    const textInput = document.getElementById('text-input');
-    const addButton = document.getElementById('add-button');
-    const taskId = document.getElementById('task-id');
-
-    textInput.addEventListener('keypress', (e) => {
-      if (e.key === 'Enter') {
-        if (textInput.value === '') {
-          // textInput.style.border = '1px solid red';
-          alert('You must write something');
-          saveData();
-        } else {
-          let li = document.createElement('li');
-          li.innerHTML = textInput.value;
-          taskId.appendChild(li);
-          saveData();
-        }
-        textInput.value = '';
-      }
-
-    });
-
-    function saveData() {
-      localStorage.setItem('data', taskId.innerHTML);
-    }
-
-    function showData(){
-      taskId.innerHTML = localStorage.getItem('data');
-    }
-
-    showData();
-
-  </script>
-
-
-
-
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-  <br>
-
-  <div class="main-box">
-    <div class="child-box"><a href="index.html">Menu 1</a></div>
-    <div class="child-box"><a href="s.html"> Menu 2 </a></div>
-  </div>
-  <style>
-    .red {
-      background: red;
-    }
-  </style>
-
-  <script>
-    var childBox = document.querySelectorAll(".child-box");
-
-    for (let i = 0; i < childBox.length; i++) {
-      childBox[i].addEventListener("click", (e) => {
-        for (let j = 0; j < childBox.length; j++) {
-          if (i == j) {
-            childBox[j].classList.toggle("red");
-          } else {
-            childBox[j].classList.remove("red");
-          }
-        }
-        e.preventDefault();
-
-
-      });
-    }
-
-      // for (let i = 0; i < childBox.length; i++) {
-      //   childBox.addEventListener("click", () => {
-      //     e.target.childBox[i].style.background = "red";
-      //   });
-      // }
-  </script>
-
 
   <script src="js/custom.js"></script>
 </body>
