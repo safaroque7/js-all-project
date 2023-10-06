@@ -332,3 +332,8 @@ div#key_box {
 .main-header h2 a {
   color: black;
 }
+
+.main-footer a {
+  color: black;
+  text-decoration: underline;
+}
